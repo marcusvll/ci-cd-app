@@ -1,0 +1,44 @@
+# .github/workflows/main.yml
+name: CI/CD com GitHub Actions e Render
+
+on:
+  push:
+    branches:
+      - main # Dispara o workflow sempre que houver um push para a branch main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest # O ambiente onde o job será executado
+
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v4 # Clona o repositório
+
+    - name: Configurar Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20' # Define a versão do Node.js a ser usada
+
+    - name: Instalar dependências
+      run: npm install # Instala as dependências do projeto
+
+    - name: Executar testes
+      run: npm test # Executa os testes (o script "test" em package.json)
+
+  deploy:
+    needs: build-and-test # Este job só será executado se o job 'build-and-test' for bem-sucedido
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v4
+
+    - name: Deploy para Render
+      uses: johnbeynon/render-deploy-action@v0.0.1 # Ação para deploy no Render
+      with:
+        service-id: 'd1447se3jp1c73d8lgsg' # O ID do seu serviço no Render
+        api-key: ${{ secrets.RENDER_API_KEY }} # Variável de ambiente secreta do GitHub Actions
+        # O Render automaticamente pega o service-id e o api-key do ambiente.
+        # No entanto, para clareza, estou explicitando.
+        # A service-id pode ser encontrada na URL do seu serviço no Render ou nas configurações.
+        # Ex: https://dashboard.render.com/web/srv-xxxxxxxxxxxxxxxxxxxx -> srv-xxxxxxxxxxxxxxxxxxxx é o ID
