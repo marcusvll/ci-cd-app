@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
    "start": "node src/index.js",
-   "test": "jest" // <--- Altere esta linha para executar o Jest
+   "test": "jest"
   },
   "keywords": [],
   "author": "",
