@@ -36,9 +36,5 @@ jobs:
     - name: Deploy para Render
       uses: johnbeynon/render-deploy-action@v0.0.1 # Ação para deploy no Render
       with:
-        service-id: 'd1447se3jp1c73d8lgsg' # O ID do seu serviço no Render
-        api-key: ${{ secrets.RENDER_API_KEY }} # Variável de ambiente secreta do GitHub Actions
-        # O Render automaticamente pega o service-id e o api-key do ambiente.
-        # No entanto, para clareza, estou explicitando.
-        # A service-id pode ser encontrada na URL do seu serviço no Render ou nas configurações.
-        # Ex: https://dashboard.render.com/web/srv-xxxxxxxxxxxxxxxxxxxx -> srv-xxxxxxxxxxxxxxxxxxxx é o ID
+        service-id: 'sua-service-id-do-render' # O ID do seu serviço no Render
+
