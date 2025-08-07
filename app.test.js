@@ -7,7 +7,7 @@ describe('GET /', () => {
   test('Deve retornar "Hello World!"', async () => {
     const response = await request(app).get('/');
     expect(response.statusCode).toBe(200);
-    expect(response.text).toBe('Hello World! Esta é uma API de exemplo para CI/CD.');
+    expect(response.text).toBe('Subindo nova versão!');
   });
 });
 
