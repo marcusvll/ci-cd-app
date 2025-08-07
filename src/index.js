@@ -7,7 +7,7 @@ app.use(express.json());
 
 // Endpoint de exemplo simples para a apresentação
 app.get('/', (req, res) => {
-  res.send('Subindo nova versão!');
+  res.send('Subindo nova versão de teste!');
 });
 
 // Outro endpoint de exemplo que será testado
