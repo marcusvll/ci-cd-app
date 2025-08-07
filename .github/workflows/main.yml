@@ -58,8 +58,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           # Substitua 'ci-cd-app' e 'marcusvll' pelos valores do seu projeto e organização no SonarCloud
-          projectKey: 'ci-cd-app'
-          organization: 'marcusvll'
+          projectKey: 'marcusvll_ci-cd-app'
+          organization: 'marcusvll-1'
 
   # Job 3: Deploy da Imagem Docker (apenas na branch 'main')
   deploy-docker:
