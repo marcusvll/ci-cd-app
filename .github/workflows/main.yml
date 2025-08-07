@@ -57,7 +57,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          # Substitua 'ci-cd-app' e 'marcusvll' pelos valores do seu projeto e organização no SonarCloud
+
           projectKey: 'marcusvll_ci-cd-app'
           organization: 'marcusvll-1'
 
