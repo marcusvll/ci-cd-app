@@ -1,25 +1,19 @@
-// src/index.js
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
-
-app.use(express.json());
-
-// Endpoint de exemplo simples para a apresentação
-app.get('/', (req, res) => {
-  res.send('Hello World! Esta é uma API de exemplo para CI/CD.');
-});
-
-// Outro endpoint de exemplo que será testado
-app.get('/status', (req, res) => {
-  res.status(200).json({ status: 'OK', message: 'Serviço está online.' });
-});
-
-// A aplicação só inicia se não estiver em ambiente de teste
-if (process.env.NODE_ENV !== 'test') {
-  app.listen(port, () => {
-    console.log(`Aplicação rodando na porta ${port}`);
-  });
+{
+  "name": "ci-cd-app",
+  "version": "1.0.1",
+  "description": "Uma simples API para testes de CI/CD.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "test:e2e": "newman run ./postman-collection.json",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "newman": "^6.0.0",
+    "supertest": "^6.3.3"
+  }
 }
-
-module.exports = app;
