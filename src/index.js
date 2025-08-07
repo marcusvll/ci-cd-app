@@ -7,7 +7,7 @@ app.use(express.json());
 
 // Endpoint de exemplo simples para a apresentação
 app.get('/', (req, res) => {
-  res.send('Hello World! Esta é uma API de exemplo para CI/CD.');
+  res.send('Subindo nova versão!');
 });
 
 // Outro endpoint de exemplo que será testado
