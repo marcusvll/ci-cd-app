@@ -4,7 +4,7 @@
   "description": "Uma simples API para testes de CI/CD.",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "node ./node_modules/jest/bin/jest.js",
     "test:e2e": "newman run ./postman-collection.json",
     "start": "node src/index.js"
   },
