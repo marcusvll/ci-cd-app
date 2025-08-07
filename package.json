@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "node ./node_modules/jest/bin/jest.js",
+    "pretest:e2e": "node src/index.js &",
     "test:e2e": "newman run ./postman-collection.json",
     "start": "node src/index.js"
   },
