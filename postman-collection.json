@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "060a5e8f-4d6c-4860-93a8-4c9197c4155b",
+		"name": "CI/CD App E2E Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1809059"
+	},
+	"item": [
+		{
+			"name": "GET /status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/status",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"if (pm.environment.get(\"baseUrl\") === undefined) {",
+					"    // For the purpose of the pipeline, we are setting a dummy URL.",
+					"    // In a real-world scenario, you would set the actual URL of the deployed app.",
+					"    pm.environment.set(\"baseUrl\", \"http://localhost:3000\");",
+					"}"
+				]
+			}
+		}
+	]
+}
