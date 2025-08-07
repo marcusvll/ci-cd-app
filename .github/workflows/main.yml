@@ -57,9 +57,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          # Substitua 'ci-cd-app' pelo projectKey do seu projeto no SonarCloud
-          projectKey: 'marcusvll_ci-cd-app'
-          organization: 'marcusvll-1'
+          # Substitua 'ci-cd-app' e 'marcusvll' pelos valores do seu projeto e organização no SonarCloud
+          projectKey: 'ci-cd-app'
+          organization: 'marcusvll'
 
   # Job 3: Deploy da Imagem Docker (apenas na branch 'main')
   deploy-docker:
